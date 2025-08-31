@@ -1,6 +1,6 @@
 # API de Gerenciamento de Alunos e Cursos 👩‍🎓
 
-Esta é uma API simples desenvolvida em **Node.js** com **Express** para gerenciar alunos e seus cursos de aperfeiçoamento.
+Esta é uma API simples desenvolvida em **Node.js** com **Express** para gerenciar alunos e seus cursos.
 
 ---
 
