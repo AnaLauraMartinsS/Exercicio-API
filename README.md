@@ -21,68 +21,17 @@ Esta é uma API simples desenvolvida em **Node.js** com **Express** para gerenci
 4. Execute o servidor (node app.js)
 - Roda na porta: http://localhost:3000
 
-📚 Endpoints
-1. Adicionar aluno
+## 📚 Endpoints
 
-POST /alunos
-
-Body (JSON):
-
-{
-  "ra": 123,
-  "nome": "Diego",
-  "turma": "ADS"
-}
-
-2. Adicionar curso para aluno
-
-POST /alunos/:ra/cursos
-
-Body (JSON):
-
-{
-  "curso": "JavaScript"
-}
-
-3. Alterar dados de um aluno
-
-PUT /alunos/:ra
-
-Body (JSON) (somente os campos que deseja alterar):
-
-{
-  "nome": "Diego Silva"
-}
-
-4. Remover aluno
-
-DELETE /alunos/:ra
-
-5. Remover curso de um aluno
-
-DELETE /alunos/:ra/cursos
-
-Body (JSON):
-
-{
-  "curso": "JavaScript"
-}
-
-6. Listar todos os alunos
-
-GET /alunos
-
-7. Listar aluno por RA
-
-GET /alunos/:ra
-
-Retorno:
-
-{
-  "nome": "Diego",
-  "turma": "ADS",
-  "cursos": ["JavaScript", "Angular"]
-}
+| Ação | Método | Endpoint | Body / Observações | Retorno |
+|------|--------|----------|------------------|---------|
+| Adicionar aluno | POST | /alunos | `{ "ra": 123, "nome": "Diego", "turma": "ADS" }` | Aluno criado com sucesso (201) |
+| Adicionar curso para aluno | POST | /alunos/:ra/cursos | `{ "curso": "JavaScript" }` | Aluno atualizado com o novo curso (200) |
+| Alterar dados de um aluno | PUT | /alunos/:ra | `{ "nome": "Diego Silva" }` (somente campos a alterar) | Aluno atualizado (200) |
+| Remover aluno | DELETE | /alunos/:ra | - | Mensagem de sucesso (200) ou 404 se não encontrado |
+| Remover curso de um aluno | DELETE | /alunos/:ra/cursos | `{ "curso": "JavaScript" }` | Mensagem de sucesso (200) ou 404 se não encontrado |
+| Listar todos os alunos | GET | /alunos | - | Lista de alunos com RA, nome e turma (200) |
+| Listar aluno por RA | GET | /alunos/:ra | - | `{ "nome": "Diego", "turma": "ADS", "cursos": ["JavaScript", "Angular"] }` (200) |
 
 
 
